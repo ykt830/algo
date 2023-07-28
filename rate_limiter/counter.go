@@ -1,6 +1,7 @@
 package rate_limiter
 
 import (
+	"log"
 	"sync/atomic"
 	"time"
 )
@@ -18,7 +19,15 @@ func NewCountLimiter(interval time.Duration, limit int32) *CountLimiter {
 		counter:  0,
 	}
 
-	go l.daemon()
+	go func() {
+		defer func() {
+			if err := recover(); err != nil {
+				log.Print(err)
+			}
+		}()
+
+		l.daemon()
+	}()
 
 	return &l
 }
