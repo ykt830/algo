@@ -1,19 +1,15 @@
 package rotate_image
 
 /*
-编写一个高效的算法来搜索 m x n 矩阵 matrix 中的一个目标值 target 。该矩阵具有以下特性：
-
-每行的元素从左到右升序排列。
-每列的元素从上到下升序排列。
+给定一个 n × n 的二维矩阵 matrix 表示一个图像。请你将图像顺时针旋转 90 度。
+你必须在 原地 旋转图像，这意味着你需要直接修改输入的二维矩阵。请不要 使用另一个矩阵来旋转图像。
 
 提示：
-m == matrix.length
-n == matrix[i].length
-1 <= n, m <= 300
--109 <= matrix[i][j] <= 109
-每行的所有元素从左到右升序排列
-每列的所有元素从上到下升序排列
--109 <= target <= 109
+
+n == matrix.length == matrix[i].length
+1 <= n <= 20
+-1000 <= matrix[i][j] <= 1000
+
 */
 
 func rotate(matrix [][]int) {
